@@ -22,7 +22,7 @@ public class UserResource {
     @GetMapping
     public ResponseEntity<List<UserDTO>> findAll() {
         List<User> list = service.findAll();
-        List<UserDTO> listDTO = list.stream().map(x -> new UserDTO(x)).collect(Collectors.toList());
+        List<UserDTO> listDTO = list.stream().map(UserDTO::new).collect(Collectors.toList());
         return ResponseEntity.ok().body(listDTO);
     }
 
@@ -43,6 +43,14 @@ public class UserResource {
     @DeleteMapping
     public ResponseEntity<Void> delete(@PathVariable String id) {
         service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Void> update(@RequestBody UserDTO objDTO, @PathVariable String id) {
+        User obj = service.fromDTO(objDTO);
+        obj.setId(id);
+        service.update(obj);
         return ResponseEntity.noContent().build();
     }
 
