@@ -12,14 +12,14 @@ public class CommentDTO implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private String texto;
+    private String text;
     private Date data;
     private AuthorDTO authorDTO;
 
     public CommentDTO() {}
 
-    public CommentDTO(String texto, Date data, AuthorDTO authorDTO) {
-        this.texto = texto;
+    public CommentDTO(String text, Date data, AuthorDTO authorDTO) {
+        this.text = text;
         this.data = data;
         this.authorDTO = authorDTO;
     }
