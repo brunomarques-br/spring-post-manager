@@ -1,13 +1,16 @@
 package br.com.brunomarques.springmongo.domain;
 
 import br.com.brunomarques.springmongo.dto.AuthorDTO;
+import br.com.brunomarques.springmongo.dto.CommentDTO;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Getter
@@ -23,6 +26,8 @@ public class Post implements Serializable {
     private String title;
     private String body;
     private AuthorDTO author;
+
+    private List<CommentDTO> comments = new ArrayList<>();
 
     public Post() {
     }
