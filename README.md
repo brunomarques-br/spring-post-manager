@@ -1,7 +1,9 @@
-**Projeto Spring Boot + MongoDB**
+# Spring Post Manager
+## Spring Boot + MongoDB 
 
 **Objetivo**
 - API básica que disponibiliza endpoints para operações de CRUD entre Posts, Usuários e Comentários
+- É utilizado o Json Web Token (JWT) para controle de autenticação na aplicação.
 
 **Modelo Arquitetura**
 - 1 - Controladores REST
